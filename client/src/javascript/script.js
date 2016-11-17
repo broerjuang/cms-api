@@ -31,7 +31,6 @@ $(document).ready(() => {
           .catch((err) => {console.log(err)})
       },
       deleteCms: function(id) {
-        console.log(id)
         axios
           .delete('http://localhost:3000/api/cms/'+id)
           .then((result) => {
