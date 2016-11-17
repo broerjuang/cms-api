@@ -19,6 +19,28 @@
           <h1>Content Management System</h1>
           <button type="button" name="button" data-toggle="modal" data-target="#cms-toogle" >Add data</button>
         </div>
+      </div>
+
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Letter</th>
+              <th>Frequency</th>
+              <th>coming</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in cms">
+              <td>{{item.cms_id}}</td>
+              <td>{{item.letter}}</td>
+              <td>{{item.frequency}}</td>
+              <td>{{item.coming}}</td>
+              <td><button type="button button-success" name="button">Update</button></td>
+              <td><button type="button button-success" name="button">Delete</button></td>
+            </tr>
+        </table>
 
       </div>
 
