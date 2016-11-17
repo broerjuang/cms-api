@@ -30,9 +30,17 @@ let destroy = (req, res) => {
     .catch((err) => res.json(err))
 }
 
+let findById = (req, res) => {
+  CMS
+    .findOne({cms_id: req.params.cms_id})
+    .then((data) => res.json(data))
+    .catch((err) => res.json(err))
+}
+
 module.exports = {
   list,
   generate,
   update,
-  destroy
+  destroy,
+  findById
 }

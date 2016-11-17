@@ -10,6 +10,9 @@ router.get('/cms', Controller.list)
 //  Post a single CMS
 router.post('/cms', Controller.generate)
 
+//  Find by CMS id
+router.get('/cms/:cms_id', Controller.findById)
+
 //  Update a single CMS
 router.put('/cms/:cms_id', Controller.update)
 

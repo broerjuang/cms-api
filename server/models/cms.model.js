@@ -8,7 +8,7 @@ const cmsSchema = new Schema({
   cms_id: {type: Number},
   letter: {type: String},
   frequency: {type: Number},
-  coming: {type: Date}
+  coming: {type: Date, default: Date.now}
 })
 
 cmsSchema.plugin(Increment, {inc_field: 'cms_id'})
