@@ -38,7 +38,7 @@
               <td>{{item.frequency}}</td>
               <td>{{item.coming}}</td>
               <td><button type="button button-success" name="button">Update</button></td>
-              <td><button type="button button-success" v-on:click="deleteCms($event)" name="button">Delete</button></td>
+              <td><button type="button button-success" v-on:click="deleteCms(item.cms_id)" name="button">Delete</button></td>
             </tr>
           </tbody>
         </table>

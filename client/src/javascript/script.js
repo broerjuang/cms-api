@@ -6,15 +6,15 @@ $(document).ready(() => {
       letter:'',
       frequency: '',
       coming:'',
-      message: ''
+      message: '',
+      searching: []
     },
     methods: {
       list: function() {
         axios
           .get('http://localhost:3000/api/cms')
           .then((item) => {
-            app.cms = item.data
-            console.log(item)})
+            app.cms = item.data})
           .catch((err) => console.log(err))
       },
       postCms: function() {
@@ -30,15 +30,24 @@ $(document).ready(() => {
           })
           .catch((err) => {console.log(err)})
       },
-      deleteCms: function(event) {
-        console.log(targetId = event.currentTarget.id;
+      deleteCms: function(id) {
+        console.log(id)
         axios
-          .delete('http://localhost:3000/api/cms'+id)
+          .delete('http://localhost:3000/api/cms/'+id)
           .then((result) => {
+            console.log(id)
             app.message = 'it has been deleted'
           })
           .catch((err) => console.log(err))
 
+      },
+      searchCms: function(id) {
+        axios
+          .get('http://localhost:3000/api/cms'+id)
+          .then((result) => {
+            app.searching = result.data
+            console.log(result)
+          })
       }
     }
   })
