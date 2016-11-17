@@ -1,0 +1,21 @@
+{
+  "name": "client",
+  "homepage": "https://github.com/broerjuang/cms-api",
+  "authors": [
+    "broerjuang <juangwiantoro@gmail.com>"
+  ],
+  "description": "cms client side",
+  "main": "index.html",
+  "keywords": [
+    "cms"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
