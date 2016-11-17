@@ -41,14 +41,27 @@ $(document).ready(() => {
           .catch((err) => console.log(err))
 
       },
-      searchCms: function(id) {
+      updateCms: function(id) {
         axios
-          .get('http://localhost:3000/api/cms'+id)
-          .then((result) => {
-            app.searching = result.data
-            console.log(result)
+          .put('http://localhost:3000/api/cms/'+id, {
+            letter: app.letter,
+            frequency: app.frequency,
+            coming: app.coming
           })
+          .then((result) => {
+            app.cms.unshift(result)
+            app.list()
+          })
+          .catch((err) => console.log(err))
       }
+      // searchCms: function(id) {
+      //   axios
+      //     .get('http://localhost:3000/api/cms/'+id)
+      //     .then((result) => {
+      //       app.searching = result.data
+      //       console.log(result)
+      //     })
+      // }
     }
   })
 
