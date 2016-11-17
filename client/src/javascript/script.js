@@ -34,17 +34,24 @@ $(document).ready(() => {
         axios
           .delete('http://localhost:3000/api/cms/'+id)
           .then((result) => {
-            alert('it has been deleted')
+
+            alert("it has been deleted")
             app.list()
-            app.message = 'it has been deleted'
           })
           .catch((err) => console.log(err))
-
       },
       updateCms: function(id) {
         axios
-          .put('http://localhost:3000/api/cms/'+id)
-          .then()
+          .put('http://localhost:3000/api/cms/'+id, {
+            letter: app.letter,
+            frequency: app.frequency,
+            coming: app.coming
+          })
+          .then((result) => {
+            app.cms.unshift(result)
+            app.list()
+          })
+          .catch((err) => console.log(err))
       }
       // searchCms: function(id) {
       //   axios
@@ -53,9 +60,8 @@ $(document).ready(() => {
       //       app.searching = result.data
       //       console.log(result)
       //     })
-      // },
 
-
+      // }
     }
   })
 
