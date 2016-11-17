@@ -3,6 +3,7 @@
 const CMS = require('../models/cms.model');
 
 let list = (req, res) => {
+  console.log('testing')
   CMS
     .find()
     .then((data) => res.json(data))
