@@ -18,7 +18,7 @@ let generate = (req, res) => {
 
 let update = (req, res) => {
   CMS
-    .findOneAndUpdate({cms_id: req.params.cms_id})
+    .findOneAndUpdate({cms_id: req.params.cms_id}, req.body ,{new: true})
     .then((data) => res.json(data))
     .catch((err) => res.json(err))
 }
@@ -33,7 +33,7 @@ let destroy = (req, res) => {
 let findById = (req, res) => {
   CMS
     .findOne({cms_id: req.params.cms_id})
-    .then((data) => res.json(data))
+    .then(() => res.json({message: 'the datum has been deleted'}))
     .catch((err) => res.json(err))
 }
 
