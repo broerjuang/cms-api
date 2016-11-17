@@ -1,7 +1,7 @@
 'use strict'
 
 const express = require('express');
-const router = expres.Router();
+const router = express.Router();
 const Controller = require('../controllers/cms.controller')
 
 // Get all cms data
@@ -15,3 +15,5 @@ router.put('/cms/:cms_id', Controller.update)
 
 //  Delete a single CMS
 router.delete('/cms/:cms_id', Controller.destroy)
+
+module.exports = router
