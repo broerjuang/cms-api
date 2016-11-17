@@ -26,29 +26,36 @@ $(document).ready(() => {
           })
           .then((result) => {
             app.cms.unshift(result)
-            console.log(result)
+            app.list()
           })
           .catch((err) => {console.log(err)})
       },
       deleteCms: function(id) {
-        console.log(id)
         axios
           .delete('http://localhost:3000/api/cms/'+id)
           .then((result) => {
-            console.log(id)
+            alert('it has been deleted')
+            app.list()
             app.message = 'it has been deleted'
           })
           .catch((err) => console.log(err))
 
       },
-      searchCms: function(id) {
+      updateCms: function(id) {
         axios
-          .get('http://localhost:3000/api/cms'+id)
-          .then((result) => {
-            app.searching = result.data
-            console.log(result)
-          })
+          .put('http://localhost:3000/api/cms/'+id)
+          .then()
       }
+      // searchCms: function(id) {
+      //   axios
+      //     .get('http://localhost:3000/api/cms/'+id)
+      //     .then((result) => {
+      //       app.searching = result.data
+      //       console.log(result)
+      //     })
+      // },
+
+
     }
   })
 
