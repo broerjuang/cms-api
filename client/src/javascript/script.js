@@ -5,7 +5,8 @@ $(document).ready(() => {
       cms:[],
       letter:'',
       frequency: '',
-      coming:''
+      coming:'',
+      message: ''
     },
     methods: {
       list: function() {
@@ -28,6 +29,16 @@ $(document).ready(() => {
             console.log(result)
           })
           .catch((err) => {console.log(err)})
+      },
+      deleteCms: function(event) {
+        console.log(targetId = event.currentTarget.id;
+        axios
+          .delete('http://localhost:3000/api/cms'+id)
+          .then((result) => {
+            app.message = 'it has been deleted'
+          })
+          .catch((err) => console.log(err))
+
       }
     }
   })

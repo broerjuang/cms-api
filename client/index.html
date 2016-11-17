@@ -31,15 +31,16 @@
               <th>coming</th>
             </tr>
           </thead>
-          <tbody>
-            <tr v-for="item in cms">
+          <tbody v-for="item in cms">
+            <tr v-bind:id="item.cms_id">
               <td>{{item.cms_id}}</td>
               <td>{{item.letter}}</td>
               <td>{{item.frequency}}</td>
               <td>{{item.coming}}</td>
               <td><button type="button button-success" name="button">Update</button></td>
-              <td><button type="button button-success" name="button">Delete</button></td>
+              <td><button type="button button-success" v-on:click="deleteCms($event)" name="button">Delete</button></td>
             </tr>
+          </tbody>
         </table>
 
       </div>
