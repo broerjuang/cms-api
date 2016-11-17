@@ -26,7 +26,7 @@ $(document).ready(() => {
           })
           .then((result) => {
             app.cms.unshift(result)
-            console.log(result)
+            app.list()
           })
           .catch((err) => {console.log(err)})
       },
@@ -35,8 +35,8 @@ $(document).ready(() => {
         axios
           .delete('http://localhost:3000/api/cms/'+id)
           .then((result) => {
-            console.log(id)
-            app.message = 'it has been deleted'
+            alert("it has been deleted")
+            app.list()
           })
           .catch((err) => console.log(err))
 
